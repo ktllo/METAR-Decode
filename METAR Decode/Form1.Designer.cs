@@ -32,6 +32,8 @@
             this.txtCode = new System.Windows.Forms.TextBox();
             this.butDecode = new System.Windows.Forms.Button();
             this.butClear = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbType = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -62,6 +64,7 @@
             this.butDecode.TabIndex = 2;
             this.butDecode.Text = "Decode";
             this.butDecode.UseVisualStyleBackColor = true;
+            this.butDecode.Click += new System.EventHandler(this.butDecode_Click);
             // 
             // butClear
             // 
@@ -73,17 +76,38 @@
             this.butClear.UseVisualStyleBackColor = true;
             this.butClear.Click += new System.EventHandler(this.butClear_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 133);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 15);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Type";
+            // 
+            // lbType
+            // 
+            this.lbType.AutoSize = true;
+            this.lbType.Location = new System.Drawing.Point(73, 133);
+            this.lbType.Name = "lbType";
+            this.lbType.Size = new System.Drawing.Size(47, 15);
+            this.lbType.TabIndex = 5;
+            this.lbType.Text = "lbType";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 253);
+            this.ClientSize = new System.Drawing.Size(627, 457);
+            this.Controls.Add(this.lbType);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.butClear);
             this.Controls.Add(this.butDecode);
             this.Controls.Add(this.txtCode);
             this.Controls.Add(this.label1);
             this.Name = "mainForm";
             this.Text = "METAR Decoder";
+            this.Load += new System.EventHandler(this.mainForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,6 +119,8 @@
         private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Button butDecode;
         private System.Windows.Forms.Button butClear;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbType;
     }
 }
 

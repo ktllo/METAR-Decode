@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace METAR_Decode
@@ -20,6 +18,26 @@ namespace METAR_Decode
         private void butClear_Click(object sender, EventArgs e)
         {
             txtCode.Text = "";
+        }
+
+        private void butDecode_Click(object sender, EventArgs e)
+        {
+            String message = txtCode.Text;
+            try
+            {
+                METAR metar = Parser.parse(message);
+                //TODO: Display the result
+                lbType.Text = metar.messageType.ToString();
+            }catch(ParserException pe)
+            {
+                MessageBox.Show(pe.Message);
+            }
+        }
+
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+            //Clear everythings
+            lbType.Text = "";
         }
     }
 }
